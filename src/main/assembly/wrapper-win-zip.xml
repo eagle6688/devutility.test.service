@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+    <id>wrapper-win</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <dependencySets>
+        <dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <outputDirectory>/lib</outputDirectory>
+        </dependencySet>
+    </dependencySets>
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/classes</directory>
+            <outputDirectory>/classes</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>install/wrapper/windows</directory>
+            <outputDirectory>/wrapper</outputDirectory>
+        </fileSet>
+    </fileSets>
+</assembly>
