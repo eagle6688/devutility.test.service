@@ -8,17 +8,17 @@
     <dependencySets>
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>/lib</outputDirectory>
+            <outputDirectory>./lib</outputDirectory>
         </dependencySet>
     </dependencySets>
     <fileSets>
         <fileSet>
             <directory>${project.build.directory}/classes</directory>
-            <outputDirectory>/classes</outputDirectory>
+            <outputDirectory>./classes</outputDirectory>
         </fileSet>
         <fileSet>
             <directory>install/wrapper/windows</directory>
-            <outputDirectory>/wrapper</outputDirectory>
+            <outputDirectory>./wrapper</outputDirectory>
         </fileSet>
     </fileSets>
 </assembly>
