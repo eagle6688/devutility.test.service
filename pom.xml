@@ -10,8 +10,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<!-- <log4j2-version>2.9.1</log4j2-version> -->
-		<org.slf4j-version>1.7.25</org.slf4j-version> 
+		<org.slf4j-version>1.7.25</org.slf4j-version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -25,29 +24,21 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>${org.slf4j-version}</version>
 		</dependency>
-		<!-- <dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
-			<version>${log4j2-version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>${log4j2-version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-slf4j-impl</artifactId>
-			<version>${org.slf4j-version}</version>
-		</dependency> -->
 	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+				<configuration>
+					<skipTests>false</skipTests>
+				</configuration>
+			</plugin>
+			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>3.1.0</version>
 				<executions>
-					<!-- Different packages with different execution section -->
 					<execution>
 						<id>devutility.test.service</id>
 						<phase>package</phase>
@@ -59,7 +50,7 @@
 							<appendAssemblyId>true</appendAssemblyId>
 							<outputDirectory>${project.build.directory}</outputDirectory>
 							<descriptors>
-								<descriptor>src/main/assembly/wrapper-win-zip.xml</descriptor>
+								<descriptor>src/main/assembly/daemon-win-zip.xml</descriptor>
 							</descriptors>
 						</configuration>
 					</execution>
