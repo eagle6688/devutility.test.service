@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO" monitorInterval="1" strict="true" schema="Log4J-V2.9.1.xsd">
+	<properties>
+		<property name="LOG_HOME">./data/logs</property>
+		<property name="LOG_Dir_DATE"></property>
+		<property name="LOG_PATTERN">%m%n</property>
+	</properties>
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d [%t] %-5p [%c] - %m%n" />
+		</Console>
+		<RollingRandomAccessFile name="FileAppender_Info" immediateFlush="true" fileName="${LOG_HOME}/info.log"
+			filePattern="${LOG_HOME}/$${date:yyyy}/$${date:MM}/$${date:dd}/%d{HH}-info.log">
+			<Filters>
+				<ThresholdFilter level="warn" onMatch="DENY" onMismatch="NEUTRAL" />
+				<ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY" />
+			</Filters>
+			<PatternLayout pattern="${LOG_PATTERN}" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+			</Policies>
+		</RollingRandomAccessFile>
+		<RollingRandomAccessFile name="FileAppender_Warn" immediateFlush="true" fileName="${LOG_HOME}/warn.log"
+			filePattern="${LOG_HOME}/history/$${date:yyyy}/$${date:MM}/$${date:dd}/%d{HH}-Warn.log">
+			<Filters>
+				<ThresholdFilter level="error" onMatch="DENY" onMismatch="NEUTRAL" />
+				<ThresholdFilter level="warn" onMatch="ACCEPT" onMismatch="DENY" />
+			</Filters>
+			<PatternLayout pattern="${LOG_PATTERN}" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+			</Policies>
+		</RollingRandomAccessFile>
+		<RollingRandomAccessFile name="FileAppender_Error" immediateFlush="true" fileName="${LOG_HOME}/error.log"
+			filePattern="${LOG_HOME}/history/$${date:yyyy}/$${date:MM}/$${date:dd}/%d{HH}-Error.log">
+			<Filters>
+				<ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY" />
+			</Filters>
+			<PatternLayout pattern="${LOG_PATTERN}" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+			</Policies>
+		</RollingRandomAccessFile>
+	</Appenders>
+	<Loggers>
+		<Root level="all" includeLocation="true">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="FileAppender_Info" />
+			<AppenderRef ref="FileAppender_Warn" />
+			<AppenderRef ref="FileAppender_Error" />
+		</Root>
+	</Loggers>
+</Configuration>
