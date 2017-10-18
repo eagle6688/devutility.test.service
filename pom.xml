@@ -24,6 +24,18 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>${org.slf4j-version}</version>
 		</dependency>
+		<dependency>
+            <groupId>devutility.internal</groupId>
+            <artifactId>devutility.internal</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/lib/devutility.internal.jar</systemPath>
+        </dependency>
+		<dependency>
+            <groupId>devutility.external</groupId>
+            <artifactId>devutility.external</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 	</dependencies>
 	<build>
 		<plugins>

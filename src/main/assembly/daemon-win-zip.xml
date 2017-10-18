@@ -24,6 +24,10 @@
             <outputDirectory>./lib</outputDirectory>
         </fileSet>
         <fileSet>
+            <directory>src/main/lib</directory>
+            <outputDirectory>./lib</outputDirectory>
+        </fileSet>
+        <fileSet>
             <directory>install/daemon/windows</directory>
             <outputDirectory>./bin</outputDirectory>
         </fileSet>
