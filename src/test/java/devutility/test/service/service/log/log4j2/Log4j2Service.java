@@ -3,9 +3,9 @@ package devutility.test.service.service.log.log4j2;
 /*import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;*/
 
-import devutility.internal.test.BaseService;
+import devutility.internal.test.BaseTest;
 
-public class Log4j2Service extends BaseService {
+public class Log4j2Service extends BaseTest {
 	@Override
 	public void run() {
 		/*Logger logger = LogManager.getLogger(Log4j2Service.class.getName());

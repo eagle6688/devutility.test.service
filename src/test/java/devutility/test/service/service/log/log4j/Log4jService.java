@@ -3,9 +3,9 @@ package devutility.test.service.service.log.log4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import devutility.internal.test.BaseService;
+import devutility.internal.test.BaseTest;
 
-public class Log4jService extends BaseService {
+public class Log4jService extends BaseTest {
 	@Override
 	public void run() {
 		Logger logger = LoggerFactory.getLogger(Log4jService.class);
